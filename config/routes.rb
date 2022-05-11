@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
+get "/book",to:"hospital#book"
+post "/appointment",to:"hospital#appointment"
+get "/booked",to:"hospital#booked"  
+# Defines the root path route ("/")
    root "hospital#index"
 end
